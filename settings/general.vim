@@ -9,10 +9,11 @@ set nowrap
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-"map <leader>l :bn<CR>
-"map <leader>h :bp<CR>
-"map <leader>q :bd<CR>
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <leader>b :ls<CR>:b<Space>
 map <leader>f :FZF<CR>
+map <leader>g :Ag<CR>
 map <leader>w <C-W><C-W>
 map <leader>pe i<%=  %><ESC>3hli
 map <leader>er i<%  %><ESC>3hli
@@ -21,3 +22,4 @@ map <leader>er i<%  %><ESC>3hli
 command BufOnly silent! execute "%bd|e#|bd#"
 nnoremap <leader>o :BufOnly<CR>
 
+let g:ackprg = 'ag --nogroup --nocolor --column'
