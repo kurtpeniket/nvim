@@ -13,6 +13,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'preservim/nerdcommenter'
+Plug 'gregsexton/matchtag'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'vimwiki/vimwiki'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
