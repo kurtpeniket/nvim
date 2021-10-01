@@ -5,6 +5,8 @@ set background=dark
 set mouse=n
 set nowrap
 set signcolumn=yes
+set expandtab
+set shiftwidth=2
 
 " Leader == space
 nnoremap <SPACE> <Nop>
@@ -19,6 +21,14 @@ map <leader>b :ls<CR>:b<Space>
 map <leader>f :FZF<CR>
 map <leader>g :Ag<CR>
 map <leader>w <C-W><C-W>
+
+" Move 1 more lines up or down in normal and visual selection modes
+nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
+" Ruby stuff
 " ERB tags
 map <leader>pe <ESC>i<%=  %><ESC>3hli
 map <leader>er <ESC>i<%  %><ESC>3hli
@@ -32,10 +42,12 @@ map <leader>do <ESC>A<SPACE>do<CR>end<ESC>kA<SPACE>\|\|<ESC>i
 map <leader>[ <ESC>a#{}<ESC>i
 " Remove highlight
 map <leader>h :noh<CR>
+" console log variable under cursor
+map <leader>lo <ESC>yiwoconsole.log();<ESC>hhp<ESC>
 
 " Close all buffers except current
-command BufOnly silent! execute "%bd|e#|bd#"
-nnoremap <leader>o :BufOnly<CR>
+"command BufOnly silent! execute "%bd|e#|bd#"
+"nnoremap <leader>o :BufOnly<CR>
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 

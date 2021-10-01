@@ -16,6 +16,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'gregsexton/matchtag'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vimwiki/vimwiki'
+Plug 'Pocco81/AutoSave.nvim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
