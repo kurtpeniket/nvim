@@ -7,6 +7,7 @@ set nowrap
 set signcolumn=yes
 set expandtab
 set shiftwidth=2
+set nrformats=
 
 " Leader == space
 nnoremap <SPACE> <Nop>
