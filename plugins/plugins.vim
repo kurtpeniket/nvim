@@ -18,6 +18,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vimwiki/vimwiki'
 Plug 'Pocco81/AutoSave.nvim'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

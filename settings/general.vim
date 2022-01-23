@@ -1,3 +1,4 @@
+runtime macros/matchit.vim
 colorscheme onedark
 set number
 set noswapfile
@@ -29,6 +30,19 @@ nnoremap J :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
+" Close all buffers except current
+command BufOnly silent! execute "%bd|e#|bd#"
+nnoremap <leader>o :BufOnly<CR>
+
+" Remove highlight
+map <leader>h :noh<CR>
+" console log variable under cursor
+map <leader>lo <ESC>yiwoconsole.log();<ESC>hhp<ESC>
+" Yank selection to system clipboard
+noremap <leader>y "*y
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " Ruby stuff
 " ERB tags
 map <leader>pe <ESC>i<%=  %><ESC>3hli
@@ -41,14 +55,5 @@ map <leader>de <ESC>i<TAB>def<CR>end<ESC>kA<SPACE>
 map <leader>do <ESC>A<SPACE>do<CR>end<ESC>kA<SPACE>\|\|<ESC>i
 " Ruby interpolation
 map <leader>[ <ESC>a#{}<ESC>i
-" Remove highlight
-map <leader>h :noh<CR>
-" console log variable under cursor
-map <leader>lo <ESC>yiwoconsole.log();<ESC>hhp<ESC>
 
-" Close all buffers except current
-"command BufOnly silent! execute "%bd|e#|bd#"
-"nnoremap <leader>o :BufOnly<CR>
-
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
+lua require'nvim-tree'.setup {}
