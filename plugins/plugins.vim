@@ -5,6 +5,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -19,6 +20,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'Pocco81/AutoSave.nvim'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
+Plug 'sainnhe/sonokai'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

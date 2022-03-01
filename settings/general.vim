@@ -1,8 +1,12 @@
 runtime macros/matchit.vim
-colorscheme onedark
+set background=dark
+"colorscheme onedark
+colorscheme sonokai
+highlight clear SignColumn
+set signcolumn=number
+
 set number
 set noswapfile
-set background=dark
 set mouse=n
 set nowrap
 set signcolumn=yes
@@ -40,6 +44,8 @@ map <leader>h :noh<CR>
 map <leader>lo <ESC>yiwoconsole.log();<ESC>hhp<ESC>
 " Yank selection to system clipboard
 noremap <leader>y "*y
+" Yank current file path to system clipboard
+noremap <leader>py :let @* = expand("%")<cr>
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -56,4 +62,4 @@ map <leader>do <ESC>A<SPACE>do<CR>end<ESC>kA<SPACE>\|\|<ESC>i
 " Ruby interpolation
 map <leader>[ <ESC>a#{}<ESC>i
 
-lua require'nvim-tree'.setup {}
+lua require'nvim-tree'.setup { view = { width = 40 } }
