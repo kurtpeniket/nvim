@@ -13,6 +13,14 @@ set signcolumn=yes
 set expandtab
 set shiftwidth=2
 set nrformats=
+set rnu
+set spelllang=en_gb
+set spell
+cabbrev ec Econtroller
+
+" change the direction of new splits
+set splitbelow
+set splitright
 
 " Leader == space
 nnoremap <SPACE> <Nop>
@@ -20,9 +28,12 @@ let mapleader=" "
 
 nnoremap <leader><TAB> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
-map <leader>dd :bd<CR>
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
+" Remove default COC map 
+" unmap <leader>qf
+map <leader>x :bd<CR>
+map <leader>vs :vspl #<CR>
+map <C-L> :bnext<CR>
+map <C-H> :bprev<CR>
 map <leader>b :ls<CR>:b<Space>
 map <leader>f :FZF<CR>
 map <leader>g :Ag<CR>
@@ -40,10 +51,16 @@ nnoremap <leader>o :BufOnly<CR>
 
 " Remove highlight
 map <leader>h :noh<CR>
+
 " console log variable under cursor
 map <leader>lo <ESC>yiwoconsole.log();<ESC>hhp<ESC>
+
 " Yank selection to system clipboard
 noremap <leader>y "*y
+
+" Yank inner word to system clipboard
+noremap <leader>t viw"*y
+
 " Yank current file path to system clipboard
 noremap <leader>py :let @* = expand("%")<cr>
 

@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tmsvg/pear-tree'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'preservim/nerdcommenter'
+"Plug 'preservim/nerdcommenter'
 Plug 'gregsexton/matchtag'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'vimwiki/vimwiki'
@@ -21,6 +21,11 @@ Plug 'Pocco81/AutoSave.nvim'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'sainnhe/sonokai'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
