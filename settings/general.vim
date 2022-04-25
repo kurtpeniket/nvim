@@ -13,10 +13,24 @@ set signcolumn=yes
 set expandtab
 set shiftwidth=2
 set nrformats=
-set rnu
+" set rnu
 set spelllang=en_gb
 set spell
 cabbrev ec Econtroller
+
+" Disable arrow keys
+noremap <Up> <NOP>
+inoremap <Up> <NOP>
+vnoremap <Up> <NOP>
+noremap <Down> <NOP>
+inoremap <Down> <NOP>
+vnoremap <Down> <NOP>
+noremap <Left> <NOP>
+inoremap <Left> <NOP>
+vnoremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Right> <NOP>
+vnoremap <Right> <NOP>
 
 " change the direction of new splits
 set splitbelow
@@ -28,7 +42,7 @@ let mapleader=" "
 
 nnoremap <leader><TAB> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
-" Remove default COC map 
+" Remove default COC map
 " unmap <leader>qf
 map <leader>x :bd<CR>
 map <leader>vs :vspl #<CR>
@@ -37,7 +51,7 @@ map <C-H> :bprev<CR>
 map <leader>b :ls<CR>:b<Space>
 map <leader>f :FZF<CR>
 map <leader>g :Ag<CR>
-map <leader>w <C-W><C-W>
+" map <leader>w <C-W><C-W>
 
 " Move 1 more lines up or down in normal and visual selection modes
 nnoremap K :m .-2<CR>==
@@ -79,4 +93,5 @@ map <leader>do <ESC>A<SPACE>do<CR>end<ESC>kA<SPACE>\|\|<ESC>i
 " Ruby interpolation
 map <leader>[ <ESC>a#{}<ESC>i
 
-lua require'nvim-tree'.setup { view = { width = 40 } }
+lua require'nvim-tree'.setup { update_focused_file = { enable = true }, auto_close = true, view = { width = 40 }, actions = { open_file = { quit_on_open = true } } }
+
