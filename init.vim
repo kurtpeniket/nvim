@@ -7,3 +7,4 @@ source $HOME/.config/nvim/settings/general.vim
 "source $HOME/.config/nvim/themes/onedark.vim
 "source $HOME/.config/nvim/themes/material.vim
 "source $HOME/.config/nvim/plugins/blankline.vim
+set rtp+=/usr/local/opt/fzf

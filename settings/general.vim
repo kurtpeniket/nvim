@@ -1,10 +1,12 @@
 runtime macros/matchit.vim
+let g:ruby_host_prog = 'rvm system do neovim-ruby-host'
 set background=dark
 "colorscheme onedark
 colorscheme sonokai
 highlight clear SignColumn
 set signcolumn=number
 
+set sidescroll=1
 set number
 set noswapfile
 set mouse=n
@@ -31,6 +33,23 @@ vnoremap <Left> <NOP>
 noremap <Right> <NOP>
 inoremap <Right> <NOP>
 vnoremap <Right> <NOP>
+
+" Column line stuff
+highlight CursorColumn ctermfg=Yellow ctermbg=Yellow cterm=bold guifg=yellow guibg=yellow gui=bold
+
+nnoremap <space>c :call ToggleCuc()<CR>
+
+let s:enabled = 0
+
+function! ToggleCuc()
+    if s:enabled
+        :set cuc
+        let s:enabled = 0
+    else
+        :set nocuc
+        let s:enabled = 1
+    endif
+endfunction
 
 " change the direction of new splits
 set splitbelow
