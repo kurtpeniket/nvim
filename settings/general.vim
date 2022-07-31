@@ -6,9 +6,13 @@ colorscheme sonokai
 highlight clear SignColumn
 set signcolumn=number
 
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_silent = 1
+set noswapfile
+
 set sidescroll=1
 set number
-set noswapfile
 set mouse=n
 set nowrap
 set signcolumn=yes
@@ -113,4 +117,3 @@ map <leader>do <ESC>A<SPACE>do<CR>end<ESC>kA<SPACE>\|\|<ESC>i
 map <leader>[ <ESC>a#{}<ESC>i
 
 lua require'nvim-tree'.setup { update_focused_file = { enable = true }, auto_close = true, view = { width = 40 }, actions = { open_file = { quit_on_open = true } } }
-
