@@ -74,7 +74,6 @@ map <C-H> :bprev<CR>
 map <leader>b :ls<CR>:b<Space>
 map <leader>f :FZF<CR>
 map <leader>g :Ag<CR>
-" map <leader>w <C-W><C-W>
 
 " Move 1 more lines up or down in normal and visual selection modes
 nnoremap K :m .-2<CR>==
@@ -105,8 +104,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Ruby stuff
 " ERB tags
-map <leader>pe <ESC>i<%=  %><ESC>3hli
-map <leader>er <ESC>i<%  %><ESC>3hli
+map <leader>pe <ESC>a<%=  %><ESC>3hli
+map <leader>er <ESC>a<%  %><ESC>3hli
 " Rails raise
 map <leader>ra <ESC>iraise .inspect<ESC>2bi
 " New Ruby method
@@ -115,5 +114,18 @@ map <leader>de <ESC>i<TAB>def<CR>end<ESC>kA<SPACE>
 map <leader>do <ESC>A<SPACE>do<CR>end<ESC>kA<SPACE>\|\|<ESC>i
 " Ruby interpolation
 map <leader>[ <ESC>a#{}<ESC>i
+" Inline class/style
+" unmap <leader>a
+map <leader>as <ESC>a class=""<ESC>i
+map <leader>st <ESC>a style=""<ESC>i
+" Quickfix shortcuts
+map <leader>qf <ESC>:copen<CR>
+map <leader>qx <ESC>:ccl<CR>
 
-lua require'nvim-tree'.setup { update_focused_file = { enable = true }, auto_close = true, view = { width = 40 }, actions = { open_file = { quit_on_open = true } } }
+lua << EOF
+require'nvim-tree'.setup {
+    update_focused_file = { enable = true },
+    view = { width = 40 },
+    actions = { open_file = { quit_on_open = true } }
+  }
+EOF
